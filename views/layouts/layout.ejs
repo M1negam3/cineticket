@@ -45,11 +45,11 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex ms-auto me-auto" role="search">
+          <!--           <form class="d-flex ms-auto me-auto" role="search">
             <input class="form-control me-2" type="search" placeholder="Veranstaltung suchen" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Suchen</button>
-          </form>
-          <ul class="navbar-nav mb-2 mb-lg-0">
+          </form> -->
+          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="#">Konstanz</a>
             </li>
@@ -65,9 +65,14 @@
   <%- body %>
 
     <footer class="border-top mt-3 p-3 bg-secondary-subtle">
-      <div class="container-fluid d-flex justify-content-between">
-        <a class="navbar-brand fs-5 text-decoration-none" href="#">CineTicket</a>
-        <a class="fs-5 text-decoration-none" href="#">Impressum</a>
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div>
+          <a class="navbar-brand fs-5 text-decoration-none" href="#">CineTicket</a>
+        </div>
+        <div class="d-flex flex-column">
+          <a class="fs-5 text-decoration-none" href="#">Impressum</a>
+          <a class="fs-5 text-decoration-none" href="#">Datenschutz</a>
+        </div>
       </div>
     </footer>
 

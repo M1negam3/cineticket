@@ -1,3 +1,7 @@
+body {
+    background-color: #D9DCD6;
+}
+
 .home-slideshow-section {
     position: relative;
     width: 100%;
@@ -21,7 +25,32 @@
 .home-text-container {
     animation-name: fadeIn;
     animation-duration: 2s;
-    width: 70%;
+    width: 60%;
+    text-align: center;
+}
+
+.location-selection-container {
+    display: flex;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.location-selection {
+    margin: 1.5rem;
+    width: 100%;
+}
+
+.location-selection a {
+    margin-bottom: .25rem;
+    width: 100%;
+}
+
+.location-selection a:hover {
+    text-decoration: underline;
+}
+
+.about-us-container {
+    width: 60%;
 }
 
 /* .home-slideshow-text {
@@ -33,6 +62,23 @@
     animation-name: slideIn;
     animation-duration: 2s;
 } */
+
+@media (max-width: 768px) {
+    .location-selection-container {
+        flex-direction: column;
+    }
+    
+    .location-selection {
+        margin: 0;
+    }
+
+    .location-selection a {
+        margin-bottom: .5rem;
+    }
+    .about-us-container {
+        width: 80%;
+    }
+}
 
 @keyframes slideIn {
     from {
