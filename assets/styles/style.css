@@ -53,16 +53,6 @@ body {
     width: 60%;
 }
 
-/* .home-slideshow-text {
-    position: absolute;
-    top: 10%;
-    width: 100%;
-    text-align: center;
-    color: white;
-    animation-name: slideIn;
-    animation-duration: 2s;
-} */
-
 @media (max-width: 768px) {
     .location-selection-container {
         flex-direction: column;
