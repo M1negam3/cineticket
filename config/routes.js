@@ -36,14 +36,12 @@ module.exports.routes = {
   'GET /admin': { view: 'pages/admin' },
   'GET /movie/new': { view: 'pages/movie/new' },
   'POST /movie': { controller: 'MovieController', action:'create' },
-  'GET /movie': 'MovieController.find',
+  'GET /movie': 'MovieController.findMoviesForAdmin',
   'GET /movie/:id': 'movie.findOne',
   'GET /movie/:id/edit': 'movie.edit',
   'POST /movie/:id/update': 'movie.update',
   'GET /movie/:id/delete': 'movie.destroy',
-  'GET /search': { view: 'pages/search' },
-  'POST /result': { controller: 'MovieController', action:'search' },
-  'GET /result': 'movie.search'
+  'GET /search': 'MovieController.find',
 
 
 };

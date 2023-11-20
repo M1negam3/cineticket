@@ -14,6 +14,20 @@ module.exports = {
     },
 
     find: async function (req, res) {
+        let movies;
+        if (req.query.q && req.query.q.length > 0) {
+            movies = await Movie.find({
+              name: {
+                'contains': req.query.q
+              }
+            })
+          } else {
+            movies = await Movie.find();
+          }
+          res.view ('pages/search', { movies: movies } );
+    },
+
+    findMoviesForAdmin: async function (req, res) {
         let movies = await Movie.find();
         res.view('pages/movie/index', { movies: movies });
     },
@@ -39,7 +53,7 @@ module.exports = {
         res.redirect('/movie');
     },
 
-    search: async function (req, res) {
+/*     search: async function (req, res) {
         var sql = "SELECT movie.name, movie.duration, movie.description FROM movie WHERE movie.name LIKE '%" + req.body.name + "%'";
 
         var rawResult = await sails.sendNativeQuery(sql);
@@ -49,7 +63,7 @@ module.exports = {
           entries.push(element);
         });
         res.view('pages/result', { entries });
-     }
+     } */
 
 
 };
