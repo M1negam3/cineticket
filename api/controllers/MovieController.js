@@ -5,6 +5,8 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+const Category = require("../models/Category");
+
 module.exports = {
 
   new: async function (req, res) {
@@ -25,9 +27,9 @@ module.exports = {
         name: {
           'contains': req.query.q
         }
-      })
+      }).populate('category')
     } else {
-      movies = await Movie.find();
+      movies = await Movie.find().populate('category');
     }
     res.view('pages/search', { movies: movies });
   },
@@ -39,15 +41,15 @@ module.exports = {
         name: {
           'contains': req.query.q
         }
-      })
+      }).populate('category')
     } else {
-      movies = await Movie.find();
+      movies = await Movie.find().populate('category');
     }
     res.view('pages/movie/index', { movies: movies });
   },
 
   findOne: async function (req, res) {
-    let movie = await Movie.findOne({ id: req.params.id });
+    let movie = await Movie.findOne({ id: req.params.id }).populate('category');
     res.view('pages/movie/show', { movie: movie });
   },
 

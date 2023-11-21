@@ -37,9 +37,11 @@
                 <th>
                     Kategorien
                 </th>
-                <td>
-                    <%= movie.category.name %>
-                </td>
+                <% if(movie.category) { %>
+                    <td>
+                        <%= movie.category.name %>
+                    </td>
+                    <% } %>
             </tr>
         </table>
     </div>

@@ -27,9 +27,11 @@
                             <td>
                                 <%= movie.description %>
                             </td>
-                            <td>
-                                <%= movie.category %>
-                            </td>
+                            <% if(movie) { %>
+                                <td>
+                                    <%= movie.category.name %>
+                                </td>
+                                <% } %>
                         </tr>
                         <% }); %>
                 </tbody>

@@ -6,7 +6,7 @@ module.exports = {
             columnType: 'varchar(80)',  
             required: true,
         },
-        meals: {
+        movies: {
             collection: 'movie',
             via: 'category'
         }
