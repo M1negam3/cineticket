@@ -25,6 +25,9 @@
                             <td>
                                 <%= movie.duration %>
                             </td>
+                            <td>
+                                <%= movie.category.name %>
+                            </td>
                             <td><a class="btn btn-secondary" href="/movie/<%= movie.id %>">anzeigen</a></td>
                             <td><a class="btn btn-warning" href="/movie/<%= movie.id %>/edit">ändern</a></td>
                             <td><a class="btn btn-danger" href="/movie/<%= movie.id %>/delete">löschen</a></td>

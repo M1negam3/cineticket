@@ -42,6 +42,10 @@ module.exports.routes = {
   'POST /movie/:id/update': 'movie.update',
   'GET /movie/:id/delete': 'movie.destroy',
   'GET /search': 'MovieController.find',
+  'GET /category/new': { view: 'pages/category/new' },
+  'POST /category': { controller: 'CategoryController', action:'create' },
+  'GET /category/:id/destroy': { controller: 'CategoryController', action: 'destroyOne' },
+  'GET /category': { controller: 'CategoryController', action: 'find' },
 
 
 };

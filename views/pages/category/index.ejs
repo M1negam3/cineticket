@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Kategorien</h1>
+
+    <div class="pt-3">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+            </thead>
+            <tbody>
+                <% categories.forEach(function(category){ %>
+                    <tr>
+                        <td>
+                            <%= category.name %>
+                        </td>
+                        <td>
+                            <a href="/category/<%= category.id %>/destroy">Löschen</a>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+
+        <a class="btn btn-primary" href="/category/new">Hinzufügen</a>
+    </div>
+</div>
+</div>

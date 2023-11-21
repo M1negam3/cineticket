@@ -4,5 +4,8 @@ module.exports = {
         name: { type: 'string', columnType: 'varchar(80)', required: true },
         description: { type: 'string', columnType: 'varchar(80)' },
         duration: { type: 'number',  columnType: 'int',  required: true},
+        category: {
+            model: 'category'
+        },
     },
   };

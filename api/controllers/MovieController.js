@@ -7,6 +7,11 @@
 
 module.exports = {
 
+  new: async function (req, res) {
+    let categories = await Category.find();
+    res.view('pages/movie/new', { categories });
+  },
+
   create: async function (req, res) {
     let params = req.allParams();
     await Movie.create(params);
