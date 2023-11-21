@@ -32,16 +32,15 @@
                 <td>
                     <%= movie.description %>
                 </td>
-                <% if(movie.category) { %>
-                    <div class="row">
-                        <div class="col-2">
-                            Kategorie
-                        </div> 
-                        <div class="col-10">
-                            <%= movie.category.name %>
-                        </div>
-                    </div>
-                    <% } %>
+            </tr>
+            <tr>
+                <th>
+                    Kategorien
+                </th>
+                <td>
+                    <%= movie.category.name %>
+                </td>
+            </tr>
         </table>
     </div>
 </div>

@@ -13,6 +13,7 @@
                     <th>Name</th>
                     <th>Dauer</th>
                     <th>Beschreibung</th>
+                    <th>Kategorie</th>
                 </thead>
                 <tbody>
                     <% movies.forEach(function(movie){ %>
@@ -25,6 +26,9 @@
                             </td>
                             <td>
                                 <%= movie.description %>
+                            </td>
+                            <td>
+                                <%= movie.category %>
                             </td>
                         </tr>
                         <% }); %>
