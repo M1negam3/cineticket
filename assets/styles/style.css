@@ -5,6 +5,10 @@ body {
     flex-direction: column;
 }
 
+.side-space {
+    width: 75%;
+}
+
 .content-container {
     background-color: white;
     flex: 1;
@@ -75,6 +79,9 @@ body {
     }
     .about-us-container {
         width: 80%;
+    }
+    .side-space {
+        width: 100%;
     }
 }
 

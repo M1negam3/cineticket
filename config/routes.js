@@ -34,7 +34,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /admin': { view: 'pages/admin' },
-  'GET /movie/new': { view: 'pages/movie/new' },
+  'GET /movie/new': { controller: 'MovieController', action:'new' },
   'POST /movie': { controller: 'MovieController', action:'create' },
   'GET /movie': 'MovieController.findMoviesForAdmin',
   'GET /movie/:id': 'movie.findOne',

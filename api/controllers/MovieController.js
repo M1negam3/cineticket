@@ -5,7 +5,7 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const Category = require("../models/Category");
+
 
 module.exports = {
 
@@ -22,30 +22,64 @@ module.exports = {
 
   find: async function (req, res) {
     let movies;
+    let categories = await Category.find();
+
     if (req.query.q && req.query.q.length > 0) {
+      if (req.query.catQ > 0) {
+        movies = await Movie.find({
+          name: {
+            'contains': req.query.q
+          },
+          category: req.query.catQ
+        }).populate('category');
+      } else {
+        movies = await Movie.find({
+          name: {
+            'contains': req.query.q
+          }
+        }).populate('category')
+      }
+    }
+    else if (req.query.catQ > 0) {
       movies = await Movie.find({
-        name: {
-          'contains': req.query.q
-        }
-      }).populate('category')
-    } else {
+        category: req.query.catQ
+      }).populate('category');
+    }
+    else {
       movies = await Movie.find().populate('category');
     }
-    res.view('pages/search', { movies: movies });
+    res.view('pages/search', { movies: movies, categories: categories });
   },
 
   findMoviesForAdmin: async function (req, res) {
     let movies;
+    let categories = await Category.find();
+
     if (req.query.q && req.query.q.length > 0) {
+      if (req.query.catQ > 0) {
+        movies = await Movie.find({
+          name: {
+            'contains': req.query.q
+          },
+          category: req.query.catQ
+        }).populate('category');
+      } else {
+        movies = await Movie.find({
+          name: {
+            'contains': req.query.q
+          }
+        }).populate('category')
+      }
+    }
+    else if (req.query.catQ > 0) {
       movies = await Movie.find({
-        name: {
-          'contains': req.query.q
-        }
-      }).populate('category')
-    } else {
+        category: req.query.catQ
+      }).populate('category');
+    }
+    else {
       movies = await Movie.find().populate('category');
     }
-    res.view('pages/movie/index', { movies: movies });
+    res.view('pages/movie/index', { movies: movies, categories: categories });
   },
 
   findOne: async function (req, res) {
