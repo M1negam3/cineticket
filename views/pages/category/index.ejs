@@ -5,6 +5,9 @@
         <table class="table">
             <thead>
                 <th>Name</th>
+                <th></th>
+                <th></th>
+                <th></th>
             </thead>
             <tbody>
                 <% categories.forEach(function(category){ %>
@@ -13,10 +16,13 @@
                             <%= category.name %>
                         </td>
                         <td>
-                            <a href="/category/<%= category.id %>/destroy">Löschen</a>
+                            <td><a class="btn btn-secondary" href="/category/<%= category.id %>">anzeigen</a></td>
+                            <td><a class="btn btn-warning" href="/category/<%= category.id %>/edit">ändern</a></td>
+                            <td><a class="btn btn-danger" href="/category/<%= category.id %>/destroy">löschen</a></td>
                         </td>
                     </tr>
                     <% }); %>
+                    
             </tbody>
         </table>
 

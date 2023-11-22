@@ -26,5 +26,36 @@ module.exports = {
     res.redirect('/category');
   },
 
- 
+  findOne: async function (req, res) {
+    sails.log.debug("Edit single Category....")
+    let category = await Category.findOne({ id: req.params.id });
+
+    if (!category) {
+        return res.status(404).send("Category not found");
+    }
+
+    sails.log.debug("Found category:", category);
+
+    res.view('pages/category/show', { category: category });
+},
+
+
+  editOne: async function (req, res) {
+    sails.log.debug("Edit single Category....")
+    let category = await Category.findOne({ id: req.params.id});
+    res.view('pages/category/edit', {category: category})
+  },
+
+  updateOne: async function (req, res) {
+    sails.log.debug("Update single Category....")
+    try {
+        let category = await Category.updateOne({ id: req.params.id }).set(req.body);
+        sails.log.debug("Updated category:", category);
+        res.view('pages/category/show', { category: category });
+    } catch (err) {
+        sails.log.error("Error updating category:", err);
+        res.serverError(err);
+    }
+},
+
 };

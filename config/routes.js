@@ -47,6 +47,8 @@ module.exports.routes = {
   'POST /category': { controller: 'CategoryController', action:'create' },
   'GET /category/:id/destroy': { controller: 'CategoryController', action: 'destroyOne' },
   'GET /category': { controller: 'CategoryController', action: 'find' },
-
+  'GET /category/:id': 'category.findOne',
+  'GET /category/:id/edit': {controller: 'CategoryController', action:'editOne'},
+  'POST /category/:id/update': 'CategoryController.updateOne',
 
 };
