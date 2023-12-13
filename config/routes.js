@@ -10,6 +10,27 @@
 
 module.exports.routes = {
 
+  //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
+  //  ║║║║╣ ╠╩╗╠═╝╠═╣║ ╦║╣ ╚═╗
+  //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
+  'GET /signup':             { action: 'entrance/view-signup' },
+  'GET /login':              { action: 'entrance/view-login' },
+
+  'GET /account':            { action: 'account/view-account-overview' },
+  'GET /account/password':   { action: 'account/view-edit-password' },
+  'GET /account/profile':    { action: 'account/view-edit-profile' },
+
+  //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
+  //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
+  //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
+  // Note that, in this app, these API endpoints may be accessed using the `Cloud.*()` methods
+  // from the Parasails library, or by using those method names as the `action` in <ajax-form>.
+  'GET /logout':                         { action: 'account/logout' },
+  'POST  /login':                        { action: 'entrance/login' },
+  'POST  /signup':                       { action: 'entrance/signup' },
+  'POST  /updateProfile':                { action: 'account/update-profile' },
+  'POST  /updatePassword':               { action: 'account/update-password' },
+
   /***************************************************************************
   *                                                                          *
   * Make the view located at `views/homepage.ejs` your home page.            *
@@ -34,6 +55,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /admin': { view: 'pages/admin' },
+  'GET /welcome': { action: 'view-homepage-or-redirect' },
   'GET /movie/new': { controller: 'MovieController', action:'new' },
   'POST /movie': { controller: 'MovieController', action:'create' },
   'GET /movie': 'MovieController.findMoviesForAdmin',
