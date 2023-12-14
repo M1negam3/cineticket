@@ -1,0 +1,14 @@
+<div id="movie-overview-container" class="content-container p-3">
+    <h2>Filmauswahl in {{ location }}</h2>
+</div>
+
+<script>
+    const { createApp } = Vue
+    createApp({
+        data() {
+            return {
+                location: 'Konstanz'
+            }
+        }
+    }).mount('#movie-overview-container')
+</script>
