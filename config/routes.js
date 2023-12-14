@@ -73,4 +73,6 @@ module.exports.routes = {
   'GET /category/:id/edit': {controller: 'CategoryController', action:'editOne'},
   'POST /category/:id/update': 'CategoryController.updateOne',
 
+  'GET /movie-overview': { view: 'pages/movie-overview' },
+
 };
