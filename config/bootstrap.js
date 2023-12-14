@@ -16,9 +16,9 @@ module.exports.bootstrap = async function() {
   // For example:
   // ```
   // // Set up fake development data (or if we already have some, avast)
-  // if (await User.count() > 0) {
-  //   return;
-  // }
+  if (await User.count() > 0) {
+     return;
+  }
   //
   // await User.createEach([
   //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
@@ -26,5 +26,9 @@ module.exports.bootstrap = async function() {
   //   // etc.
   // ]);
   // ```
+  await User.createEach([
+    { emailAddress: 'admin@admin.de', fullName: 'Ryan Dahl', isSuperAdmin: true, password: await
+   sails.helpers.passwords.hashPassword('admin') },
+    ]);
 
 };
