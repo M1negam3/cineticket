@@ -75,4 +75,10 @@ module.exports.routes = {
 
   'GET /movie-overview': { view: 'pages/movie-overview' },
 
+
+  'GET /seat/list': 'SeatController.list',
+  'GET /seat/select/:id': 'SeatController.select',
+
+  'POST /seat/add-seats': 'SeatController.addSeats',
+
 };
