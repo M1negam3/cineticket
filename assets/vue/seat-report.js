@@ -1,3 +1,4 @@
+
 export default {
   data() {
     return {
@@ -27,7 +28,7 @@ export default {
     },
     updateSeatStatus(entry) {
       if (entry.status !== 'occupied') {
-        this.saveUpdatedSeat(entry); 
+        this.saveUpdatedSeat(entry);
       }
     },
     getSeatColor(status) {
@@ -82,35 +83,55 @@ export default {
   },
   template: `
     <div class="container">
-    <h1>Sitzplätze</h1>
-    <h2>Leinwand</h2>
+      <h1>Sitzplätze</h1>
+    
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>Leinwand</h1>
+          <div class="item-content row">
+            <div class="col-4" v-for="entry in entries" :key="entry.id">
+              <button
+                v-if="entry.status !== 'occupied'"
+                type="button"
+                class="seat-button"
+                :style="{ backgroundColor: getSeatColor(entry.status), height: '30px', width: '30px', margin: '0 4px 8px 0' }"
+                @click="toggleSeatStatus(entry)"
+              ></button>
+              <button
+                v-else
+                type="button"
+                class="seat-button-occupied"
+                :style="{ backgroundColor: getSeatColor(entry.status), height: '30px', width: '30px', margin: '0 4px 8px 0' }"
+                @click="handleOccupiedSeatClick(entry)"
+              ></button>
+            </div>
+          </div>
+          <div>
+            Kosten: {{ countSelectedSeats() }} Euro
+          </div>
+
+          <!--<button @click="addSeat">Sitzplatz hinzufügen</button>-->
+          <button type="button" class="btn btn-outline-dark chair-button" @click="occupySelectedSeats">
+            <i class="fas fa-chair mr-2"></i> <!-- Font Awesome Icon für einen Stuhl -->
+            Kostenpflichtig bestellen
+          </button>
+
+          
+        </div>
+      </div>
+      
+    </div>
   
 
-    <div class="item-content row">
-    <div class="col-4 p-0" v-for="entry in entries" :key="entry.id">
-      <button
-        v-if="entry.status !== 'occupied'"
-        type="button"
-        class="seat-button"
-        :style="{ backgroundColor: getSeatColor(entry.status), height: '30px', width: '30px' }"
-        @click="toggleSeatStatus(entry)"
-      ></button>
-      <button
-        v-else
-        type="button"
-        class="seat-button-occupied"
-        :style="{ backgroundColor: getSeatColor(entry.status), height: '30px', width: '30px' }"
-        @click="handleOccupiedSeatClick(entry)"
-      ></button>
-    </div>
-  </div>
-
-  <div>
-      Kosten: {{ countSelectedSeats() }} Euro
-    </div>
-
-    <button @click="addSeat">Sitzplatz hinzufügen</button>
-    <button @click="occupySelectedSeats">Kostenpflichtig kaufen</button>
-  </div>
+  
     `,
+    style: `
+      .chair-button {
+      /* Hier kannst du zusätzliche Stilisierungen für den Stuhl-Button hinzufügen */
+      }
+
+      /* Optional: Stil für das Font Awesome Icon */
+    .fas.fa-chair {
+    /* Hier kannst du das Icon nach Bedarf anpassen */
+    } `,
 };
