@@ -75,6 +75,9 @@ module.exports.routes = {
 
   'GET /movie-overview': { view: 'pages/movie-overview' },
 
-  'GET /api/seat': {action:'api/seat/report'}
+  'GET /api/seat': {action:'api/seat/report'},
+  'POST /api/seat': {action:'api/seat/add'},
+  'PUT /api/seat/update/:id': 'SeatController.updateSeat',
+
 
 };
