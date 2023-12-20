@@ -1,14 +1,12 @@
 export default {
     data() {
       return {
-        name: '' // Hier wird der eingegebene Sitzplatzname gespeichert
+        name: '' 
       };
     },
     methods: {
       addSeat() {
-        // Hier kannst du Logik hinzufügen, um die addSeat-Funktion aufzurufen.
-        // Du kannst hier z.B. die Variable seatName verwenden, um den Sitzplatznamen zu übergeben.
-        // Beispiel mit Axios:
+
         axios.post('/api/seat/add', { name: this.name })
           .then(response => {
          

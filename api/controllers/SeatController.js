@@ -109,7 +109,7 @@ module.exports = {
     
         const createdSeat = await Seat.create({
           name: seatName,
-          status: 'available', // Optional: Setzen Sie den Status nach Bedarf
+          status: 'available', 
         }).fetch();
   
         return res.json(createdSeat);
@@ -128,7 +128,6 @@ module.exports = {
       console.log('Seat ID:', seatId);
       console.log('Updated Status:', updatedStatus);
   
-        // Hier füge deine benutzerdefinierte Logik hinzu, um den Sitzplatz zu aktualisieren
         const updatedSeat = await Seat.updateOne({ id: seatId }).set({ status: updatedStatus });
   
         if (!updatedSeat) {
