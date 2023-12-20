@@ -75,4 +75,6 @@ module.exports.routes = {
 
   'GET /movie-overview': { view: 'pages/movie-overview' },
 
+  'GET /api/seat': {action:'api/seat/report'}
+
 };
