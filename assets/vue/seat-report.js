@@ -73,6 +73,7 @@ export default {
           this.saveUpdatedSeat(entry);
         }
       });
+      this.$router.push('confirmation');
     },
     countSelectedSeats() {
       return this.entries.filter(entry => entry.status === 'selected').length * 10;
@@ -82,14 +83,18 @@ export default {
     },
   },
   template: `
-    <div class="container">
-      <h1>Sitzplätze</h1>
-    
-      <div class="row">
-        <div class="col-12 text-center">
+    <div class="container d-flex flex-column align-items-center">
+    <div class="w-100">
+      <h1>Sitzplatzwahl</h1>
+    </div>
+
+      <div class="row pt-5">
+        <div class="col-12 d-flex flex-column align-items-center">
+        <div>
           <h1>Leinwand</h1>
-          <div class="item-content row">
-            <div class="col-4" v-for="entry in entries" :key="entry.id">
+        </div>
+          <div class="item-content row text-center">
+            <div class="col-4 seat-width" v-for="entry in entries" :key="entry.id">
               <button
                 v-if="entry.status !== 'occupied'"
                 type="button"
@@ -106,8 +111,10 @@ export default {
               ></button>
             </div>
           </div>
-          <div>
-            Kosten: {{ countSelectedSeats() }} Euro
+          <div class="pt-5 pb-5">
+          Tickets: {{ countSelectedSeats() / 10 }} x {{ 10 }} Euro<br>
+          davon MwSt.: {{ countSelectedSeats() * 0.19 }} Euro<br>
+          Gesamt: {{ countSelectedSeats() }} Euro
           </div>
 
           <!--<button @click="addSeat">Sitzplatz hinzufügen</button>-->
@@ -116,14 +123,14 @@ export default {
             Kostenpflichtig bestellen
           </button>
 
-          
+
         </div>
       </div>
-      
-    </div>
-  
 
-  
+    </div>
+
+
+
     `,
     style: `
       .chair-button {

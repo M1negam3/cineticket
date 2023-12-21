@@ -78,6 +78,8 @@ module.exports.routes = {
   'GET /api/seat': {action:'api/seat/report'},
   'POST /api/seat': {action:'api/seat/add'},
   'PUT /api/seat/update/:id': 'SeatController.updateSeat',
+  
+  'GET /api/search': { action: 'api/category/index'},
 
 
 };

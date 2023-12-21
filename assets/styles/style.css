@@ -65,6 +65,10 @@ body {
     width: 60%;
 }
 
+.seat-width {
+    width: 5%;
+}
+
 @media (max-width: 768px) {
     .location-selection-container {
         flex-direction: column;
