@@ -17,19 +17,26 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
-  '*': 'is-logged-in',
+   //'*': true,
+  //'*': 'is-logged-in',
+
+  '*/seat':'is-logged-in',
 
   // Bypass the `is-logged-in` policy for:
   'entrance/*': true,
   'account/logout': true,
-  'view-admin': 'is-super-admin',
 
 
   MovieController: {
+    'find': true,
+    'findOne': true,
     '*': 'is-super-admin',
   },
   CategoryController: {
     '*': 'is-super-admin',
+  },
+  SeatController: {
+    'addSeat': 'is-super-admin',
+    '*': 'is-logged-in',
   }
 };
