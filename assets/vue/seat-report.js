@@ -21,10 +21,10 @@ export default {
         entry.status = 'available';
         this.updateSeatStatus(entry);
       } else {
-
         entry.status = 'selected';
         this.updateSeatStatus(entry);
       }
+      localStorage.setItem("ticketsBought", this.countSelectedSeats() / 10);
     },
     updateSeatStatus(entry) {
       if (entry.status !== 'occupied') {
@@ -112,14 +112,14 @@ export default {
             </div>
           </div>
           <div class="pt-5 pb-5">
-          Tickets: {{ countSelectedSeats() / 10 }} x {{ 10 }} Euro<br>
+          Tickets: {{ countSelectedSeats() / 10 }} x 10 Euro<br>
           davon MwSt.: {{ countSelectedSeats() * 0.19 }} Euro<br>
           Gesamt: {{ countSelectedSeats() }} Euro
           </div>
 
           <!--<button @click="addSeat">Sitzplatz hinzufügen</button>-->
           <button type="button" class="btn btn-outline-dark chair-button" @click="occupySelectedSeats">
-            <i class="fas fa-chair mr-2"></i> <!-- Font Awesome Icon für einen Stuhl -->
+          <!--<i class="fas fa-chair mr-2"></i> Font Awesome Icon für einen Stuhl -->
             Kostenpflichtig bestellen
           </button>
 
