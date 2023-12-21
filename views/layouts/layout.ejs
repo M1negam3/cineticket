@@ -33,62 +33,52 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+          <ul class="navbar-nav mb-2 mb-g-0 ms-auto">
 
             <!-- LOGGED-IN NAVIGATION -->
             <% if(req.me) { %>
               <!-- Added Block für Super user Navigation-->
               <% if(req.me.isSuperAdmin) { %>
-                <div class="nav-item dropdown d-none d-sm-block">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse custom-navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                      <li class="nav-item">
-                        <a class="nav-link" href="/movie">Filme durchsuchen</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/movie">Film ändern</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/category">Kategorie bearbeiten</a>
-                      </li>
-                  </div>
-                  <% } %>
-                    <!-- Only in desktop nav -->
-                    <div class="nav-item dropdown d-none d-sm-block">
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                          <li class="nav-item">
-                            <a class="nav-link" href="/account">Settings</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="/logout">Sign out</a>
-                          </li>
-                      </div>
-                      <!-- Only in mobile nav -->
-                      <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/account">Account Settings</a>
-                      <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/logout">Sign out</a>
-                      <% } else { %>
-                        <!-- LOGGED-OUT NAVIGATION -->
-                        <a class="btn btn-primary ml-2 mr-2" href="/search">Suchen</a>
-                        <a class="btn btn-primary" href="/login">Log in</a>
-                        <!-- Only in desktop nav -->
-                        <div class="form-inline d-none ml-2 d-md-block">
-                          <a class="btn btn-primary" href="/signup">Sign up</a>
-                    
-                        </div>
-                        <!-- Only in mobile nav -->
-                        <a class="nav-item nav-link text-info ml-2 d-block d-md-none" href="/signup">Sign up</a>
+                      <% if (req.me.isSuperAdmin) { %>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/search">Filme durchsuchen</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/movie">Film ändern</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/category">Kategorie bearbeiten</a>
+                        </li>
                         <% } %>
+                    </ul>
+                  </div>
+                </div>
+                <% } %>
+                  <!-- Only in desktop nav -->
+                  <div class="container-fluid">
+                    <div class="collapse navbar-collapse custom-navbar-collapse justify-content-end" id="navbarSupportedContent">
+                      <ul class="navbar-nav mb-2 mb-g-0 ms-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="/account">Account Settings</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/logout">Sign out</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <% } else { %>
+                    <div class="container-fluid">
+                      <!-- LOGGED-OUT NAVIGATION -->
+                      <a class="btn btn-primary" href="/search"> Filme Suchen</a>
+                      <a class="btn btn-primary" href="/login">Log in</a>
+                      <a class="btn btn-primary" href="/signup">Sign up</a>
+
+                    </div>
+                    <% } %>
           </ul>
         </div>
       </div>
