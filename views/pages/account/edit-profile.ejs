@@ -7,14 +7,16 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label for="full-name">Full name</label>
-            <input class="form-control" id="full-name" name="fullName" type="text"  placeholder="Sturgis P. Sturgeon" autocomplete="name" focus-first value="<%= req.me.fullName %>">
+            <input class="form-control" id="full-name" name="fullName" type="text" placeholder="Sturgis P. Sturgeon"
+              autocomplete="name" focus-first value="<%= req.me.fullName %>">
             <div class="invalid-feedback">Please enter your full name.</div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="form-group">
             <label for="email-address">Email address</label>
-            <input class="form-control" id="email-address" name="emailAddress" type="email" placeholder="sturgeon@example.com" autocomplete="email" value="<%= req.me.emailAddress %>">
+            <input class="form-control" id="email-address" name="emailAddress" type="email"
+              placeholder="sturgeon@example.com" autocomplete="email" value="<%= req.me.emailAddress %>">
             <div class="invalid-feedback">Please enter a valid email address.</div>
           </div>
         </div>
@@ -26,7 +28,7 @@
         <div class="col-sm-6">
           <div class="form-group text-right pt-4">
             <a class="btn btn-outline-info" href="/account">Cancel</a>
-            <button type="submit"  class="btn btn-dark">Save changes</button>
+            <button type="submit" class="btn btn-success">Save changes</button>
           </div>
         </div>
       </div>
