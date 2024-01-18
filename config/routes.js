@@ -63,6 +63,9 @@ module.exports.routes = {
   'GET /movie/:id/edit': 'movie.edit',
   'POST /movie/:id/update': 'movie.update',
   'GET /movie/:id/delete': 'movie.destroy',
+  'GET /movie/:id/uploadImageForm': 'movie.uploadImageForm',
+  'POST /movie/:id/uploadImage': 'movie.uploadImage',
+
   'GET /search': 'MovieController.find',
   
   'GET /category/new': { view: 'pages/category/new' },

@@ -24,60 +24,78 @@
   <script src="/dependencies/vue-router.global.js"></script>
   <script src="/dependencies/vuetify.min.js"></script>
   <!--SCRIPTS END-->
-  <header>
+  <header class="border-bottom">
     <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
+      <div class="container-fluid" style="width: 100%">
         <a class="navbar-brand" href="/">CineTicket</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-g-0 ms-auto">
+        <div class="collapse navbar-collapse navigation-bar-div mt-5 mb-5" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
 
             <!-- LOGGED-IN NAVIGATION -->
             <% if(req.me) { %>
               <!-- Added Block für Super user Navigation-->
               <% if(req.me.isSuperAdmin) { %>
-                <div class="container-fluid">
-                  <div class="collapse navbar-collapse custom-navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                <!-- <div class="container-fluid"> -->
+                  <div class="collapse navbar-collapse custom-navbar-collapse justify-content-end ms-5" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
                       <% if (req.me.isSuperAdmin) { %>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/search">Filme durchsuchen</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/movie">Film ändern</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/category">Kategorie bearbeiten</a>
+                        <li class="nav-item fs-5">
+                          <a class="nav-link active fw-semibold" href="/admin">Adminbereich</a>
                         </li>
                         <% } %>
                     </ul>
                   </div>
-                </div>
+                <!-- </div> -->
                 <% } %>
                   <!-- Only in desktop nav -->
-                  <div class="container-fluid">
-                    <div class="collapse navbar-collapse custom-navbar-collapse justify-content-end" id="navbarSupportedContent">
-                      <ul class="navbar-nav mb-5 mb-lg-0 ms-auto pt-2">
-                        <li class="nav-item">
-                          <a class="nav-link" href="/account">Account Settings</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/logout">Sign out</a>
+                  <!-- <div class="container-fluid"> -->
+                    <div class="collapse navbar-collapse custom-navbar-collapse justify-content-end ms-5" id="navbarSupportedContent">
+                      <ul class="navbar-nav ms-auto">
+                        <li class="nav-item fs-5">
+                          <a class="nav-link active fw-semibold" href="/search">Suchen</a>
                         </li>
                       </ul>
                     </div>
-                  </div>
-                  <% } else { %>
-                    <div class="container-fluid">
-                      <!-- LOGGED-OUT NAVIGATION -->
-                      <a class="btn btn-primary" href="/search"> Filme Suchen</a>
-                      <a class="btn btn-primary" href="/login">Log in</a>
-                      <a class="btn btn-primary" href="/signup">Sign up</a>
-
+                    <div class="collapse navbar-collapse custom-navbar-collapse justify-content-end ms-5" id="navbarSupportedContent">
+                      <ul class="navbar-nav ms-auto">
+                        <li class="nav-item fs-5">
+                          <a class="nav-link active fw-semibold" href="/account">Mein Account</a>
+                        </li>
+                        <li class="nav-item fs-5">
+                          <a class="nav-link active fw-semibold" href="/logout">Ausloggen</a>
+                        </li>
+                      </ul>
                     </div>
+                  <!-- </div> -->
+                  <% } else { %>
+                    <!-- <div class="container-fluid"> -->
+                      <!-- LOGGED-OUT NAVIGATION -->
+                      <!-- <a class="btn btn-primary" href="/search"> Filme Suchen</a>
+                      <a class="btn btn-primary" href="/login">Log in</a>
+                      <a class="btn btn-primary" href="/signup">Sign up</a> -->
+                      <div class="collapse navbar-collapse custom-navbar-collapse justify-content-end ms-5" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                          <li class="nav-item fs-5">
+                            <a class="nav-link active fw-semibold" href="/search">Suchen</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="collapse navbar-collapse custom-navbar-collapse justify-content-end ms-5" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                          <li class="nav-item fs-5">
+                            <a class="nav-link active fw-semibold" href="/login">Einloggen</a>
+                          </li>
+                          <li class="nav-item fs-5">
+                            <a class="nav-link active fw-semibold" href="/signup">Registrieren</a>
+                          </li>
+                        </ul>
+                      </div>
+
+                    <!-- </div> -->
                     <% } %>
           </ul>
         </div>
@@ -87,7 +105,7 @@
 
   <%- body %>
 
-    <footer class="border-top p-3 bg-secondary-subtle">
+    <footer class="border-top p-3">
       <div class="container-fluid d-flex justify-content-between align-items-center">
         <div>
           <a class="navbar-brand fs-5 text-decoration-none" href="/">CineTicket</a>

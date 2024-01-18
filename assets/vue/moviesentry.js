@@ -14,7 +14,7 @@ export default {
   <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-2">
-      <img src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" class="img-fluid rounded-start" alt="...">
+      <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/' + movie.image" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">

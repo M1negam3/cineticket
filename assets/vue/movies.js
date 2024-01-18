@@ -32,7 +32,7 @@ export default {
           ></v-carousel-item>
         </v-carousel>
       </div> -->
-      <div class="mt-2" v-for="movie in categories">
+      <div class="mt-2 movies-list-container" v-for="movie in categories">
         <moviesentry :movie='movie'></moviesentry>
       </div>
     </div>`,

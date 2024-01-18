@@ -7,5 +7,6 @@ module.exports = {
         category: {
             model: 'category'
         },
+        image: { type: 'string', columnType: 'varchar(80)' },
     },
   };

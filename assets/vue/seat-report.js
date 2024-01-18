@@ -85,10 +85,10 @@ export default {
   template: `
     <div class="container d-flex flex-column align-items-center">
     <div class="w-100">
-      <h1>Sitzplatzwahl</h1>
+      <h1 class="headlines">Sitzplatzwahl</h1>
     </div>
 
-      <div class="row pt-5">
+      <div class="row pt-5 movies-list-container">
         <div class="col-12 d-flex flex-column align-items-center">
         <div>
           <h1>Leinwand</h1>
@@ -118,7 +118,7 @@ export default {
           </div>
 
           <!--<button @click="addSeat">Sitzplatz hinzufügen</button>-->
-          <button type="button" class="btn btn-outline-dark chair-button" @click="occupySelectedSeats">
+          <button type="button" class="btn btn-outline-info chair-button" @click="occupySelectedSeats">
           <!--<i class="fas fa-chair mr-2"></i> Font Awesome Icon für einen Stuhl -->
             Kostenpflichtig bestellen
           </button>

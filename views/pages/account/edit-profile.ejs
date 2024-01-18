@@ -1,23 +1,23 @@
 <div id="edit-profile" class="content-container p-5" v-cloak>
   <account-notification-banner></account-notification-banner>
-  <div class="pt-5 pb-5">
-    <h1 class="pb-3">Update personal info</h1>
+  <h1 class="pb-3 headlines">Persönliche Informationen ändern</h1>
+  <div class="pt-5 pb-5 movies-list-container">
     <form action="/updateProfile" method="POST">
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group">
-            <label for="full-name">Full name</label>
+            <label for="full-name">Name</label>
             <input class="form-control" id="full-name" name="fullName" type="text" placeholder="Sturgis P. Sturgeon"
               autocomplete="name" focus-first value="<%= req.me.fullName %>">
-            <div class="invalid-feedback">Please enter your full name.</div>
+            <div class="invalid-feedback">Bitte Namen eingeben.</div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="form-group">
-            <label for="email-address">Email address</label>
+            <label for="email-address">Email</label>
             <input class="form-control" id="email-address" name="emailAddress" type="email"
               placeholder="sturgeon@example.com" autocomplete="email" value="<%= req.me.emailAddress %>">
-            <div class="invalid-feedback">Please enter a valid email address.</div>
+            <div class="invalid-feedback">Bitte eine gültige E-Mail Adresse angeben.</div>
           </div>
         </div>
       </div>
@@ -27,8 +27,8 @@
         </div>
         <div class="col-sm-6">
           <div class="form-group text-right pt-4">
-            <a class="btn btn-outline-info" href="/account">Cancel</a>
-            <button type="submit" class="btn btn-success">Save changes</button>
+            <a class="btn btn-outline-info" href="/account">Abbrechen</a>
+            <button type="submit" class="btn btn-success">Speichern</button>
           </div>
         </div>
       </div>

@@ -1,47 +1,49 @@
 <div id="account-overview" class="content-container">
   <account-notification-banner></account-notification-banner>
   <div class="container pt-5 pb-5">
-    <h1>My account</h1>
-    <hr />
-    <div class="row mb-3">
-      <div class="col-sm-6">
-        <h4>Personal information</h4>
+    <h1 class="headlines">Mein Account</h1>
+    <div class="movies-list-container">
+      <hr />
+      <div class="row mb-3">
+        <div class="col-sm-6">
+          <h4>Persönliche Informationen</h4>
+        </div>
+        <div class="col-sm-6">
+          <span class="float-sm-right">
+            <a style="width: 150px" class="btn btn-sm btn-outline-info" href="/account/profile">Profil bearbeiten</a>
+          </span>
+        </div>
       </div>
-      <div class="col-sm-6">
-        <span class="float-sm-right">
-          <a style="width: 150px" class="btn btn-sm btn-outline-info" href="/account/profile">Edit profile</a>
-        </span>
+      <div class="row">
+        <div class="col-3">Name:</div>
+        <div class="col"><strong>
+            <%= req.me.fullName %>
+          </strong></div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-3">Name:</div>
-      <div class="col"><strong>
-          <%= req.me.fullName %>
-        </strong></div>
-    </div>
-    <div class="row">
-      <div class="col-3">Email:</div>
-      <div class="col">
-        <strong>
-          <%= req.me.emailAddress %>
-        </strong>
+      <div class="row">
+        <div class="col-3">Email:</div>
+        <div class="col">
+          <strong>
+            <%= req.me.emailAddress %>
+          </strong>
+        </div>
       </div>
-    </div>
-    <hr />
-    <div class="row mb-3">
-      <div class="col-sm-6">
-        <h4>Password</h4>
+      <hr />
+      <div class="row mb-3">
+        <div class="col-sm-6">
+          <h4>Passwort</h4>
+        </div>
+        <div class="col-sm-6">
+          <span class="float-sm-right">
+            <a style="width: 150px" class="btn btn-sm btn-outline-info" href="/account/password">Passwort ändern</a>
+          </span>
+        </div>
       </div>
-      <div class="col-sm-6">
-        <span class="float-sm-right">
-          <a style="width: 150px" class="btn btn-sm btn-outline-info" href="/account/password">Change password</a>
-        </span>
+      <div class="row">
+        <div class="col-3">Passwort:</div>
+        <div class="col"><strong>••••••••••</strong></div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-3">Password:</div>
-      <div class="col"><strong>••••••••••</strong></div>
     </div>
   </div>
 </div>
-  <%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

@@ -103,17 +103,39 @@ module.exports = {
     res.redirect('/movie');
   },
 
-  /*     search: async function (req, res) {
-          var sql = "SELECT movie.name, movie.duration, movie.description FROM movie WHERE movie.name LIKE '%" + req.body.name + "%'";
-  
-          var rawResult = await sails.sendNativeQuery(sql);
-          
-          let entries  = [];
-          rawResult.rows.forEach(element => {
-            entries.push(element);
-          });
-          res.view('pages/result', { entries });
-       } */
+  uploadImageForm: async function (req, res) {
+    sails.log.debug("Upload image form....")
+    let movie = await Movie.findOne({ id: req.params.id })
+    res.view('pages/movie/uploadImageForm', { movie: movie });
+  },
+
+  uploadImage: async function (req, res) {
+    sails.log("Upload image for movie...")
+    let params = {
+      adapter: require('skipper-s3'),
+      key: sails.config.s3accesskey,
+      secret: sails.config.s3secret,
+      bucket: 'wetebucket',
+      region: 'us-west-2'
+    };
+
+    let callback = async function (err, uploadedFiles) {
+      if (err) {
+        sails.log("Upload Error")
+        return res.serverError(err);
+      } else {
+        sails.log("Uploaded!")
+      }
+      let fname = require('path').basename(uploadedFiles[0].fd);
+      await Movie.updateOne({ id: req.params.id }).set({ image:fname });
+      return res.redirect('/movie');
+    };
+
+      // This funvtion is called, once all files are uploaded
+      // err indicates if the upload process triggered an error and has been aborted 
+      // uploaded files contains an array of the files which have been uploaded, in our case only one.
+      await req.file('image').upload(params, callback);
+    },
 
 
 };
