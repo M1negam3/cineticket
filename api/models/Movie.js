@@ -8,5 +8,9 @@ module.exports = {
             model: 'category'
         },
         image: { type: 'string', columnType: 'varchar(80)' },
+        venues: {
+            collection: 'venue',
+            via: 'movie'
+        }
     },
   };
