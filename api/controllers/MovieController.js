@@ -84,7 +84,8 @@ module.exports = {
 
   findOne: async function (req, res) {
     let movie = await Movie.findOne({ id: req.params.id }).populate('category');
-    res.view('pages/movie/show', { movie: movie });
+    let venue = await Venue.findOne({ movie: req.params.id });
+    res.view('pages/movie/show', { movie: movie, venue: venue });
   },
 
   edit: async function (req, res) {

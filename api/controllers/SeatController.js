@@ -69,25 +69,6 @@ module.exports = {
       res.serverError('Internal Server Error');
     }
   },
-
-  addSeats: async function (req, res) {
-    try {
-      const seatName = req.body.name;
-
-
-      const createdSeat = await Seat.create({
-        name: seatName,
-        status: 'available',
-      }).fetch();
-
-      return res.json(createdSeat);
-    } catch (error) {
-      console.error('Fehler beim Hinzufügen von Sitzplätzen:', error);
-      return res.status(500).json({ error: 'Internal Server Error' });
-    }
-  },
-
-
   updateSeat: async function (req, res) {
     try {
       console.log('Update Seat Action aufgerufen');
@@ -106,6 +87,28 @@ module.exports = {
     } catch (error) {
       console.error(error);
       return res.status(500).json({ error: 'Interner Serverfehler' });
+    }
+  },
+
+  async findByVenue(req, res) {
+    try {
+      const venueId = req.param('venueId');
+      
+      if (!venueId) {
+        return res.badRequest('Venue ID is required.');
+      }
+
+      const venue = await Venue.findOne({ id: venueId }).populate('seatplan');
+
+      if (!venue) {
+        return res.status(404).json({ error: 'Venue wurde nicht gefunden.' });
+      }
+
+      const seats = await Seat.find({ seatplan: venue.seatplan.id });
+
+      return res.json(seats);
+    } catch (error) {
+      return res.serverError(error.message || error);
     }
   },
 

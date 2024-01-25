@@ -22,7 +22,6 @@ module.exports = {
     return categories = await Movie.find().populate('category');
 
 
-
   }
 
 

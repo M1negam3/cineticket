@@ -11,10 +11,9 @@ module.exports = {
         isIn: ['available', 'selected', 'occupied'],
         defaultsTo: 'available'
       },
-      seatplans: {
-        collection: 'seatplan',
-        via: 'seat'
-    }
+      seatplan: {
+        model: 'seatplan'
+      }
     },
   
   };

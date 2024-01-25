@@ -3,14 +3,20 @@ export default {
   data() {
     return {
       entries: [],
+      selectedVenueId: null,
+      venueId: 1,
     };
   },
+ 
   created() {
-    this.loadSeats();
+    this.loadSeatsByVenue(2);
+    console.log('selectedVenueId anzeigen. New value:', this.$router.selectedVenueId);
   },
   methods: {
-    loadSeats() {
-      let url = new URL(origin + '/api/seat');
+    loadSeatsByVenue(venueId) {
+      let url = new URL(`${origin}/api/seat/by-venue`);
+      url.searchParams.append('venueId', venueId);
+  
       fetch(url)
         .then(response => response.json())
         .then(data => (this.entries = data))
@@ -40,9 +46,6 @@ export default {
         default:
           return 'blue';
       }
-    },
-    addSeat() {
-      this.$router.push('/add-seat')
     },
     changeStatus(entry) {
       entry.status = 'selected';
