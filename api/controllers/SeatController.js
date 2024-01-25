@@ -55,6 +55,24 @@ module.exports = {
     }
   },
 
+  addSeats: async function (req, res) {
+    try {
+      const seatName = req.body.name;
+
+
+      const createdSeat = await Seat.create({
+        name: seatName,
+        status: 'available',
+      }).fetch();
+
+      return res.json(createdSeat);
+    } catch (error) {
+      console.error('Fehler beim Hinzufügen von Sitzplätzen:', error);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+  },
+
+
   select: async function (req, res) {
     try {
 

@@ -37,6 +37,9 @@ export default {
         this.saveUpdatedSeat(entry);
       }
     },
+    addSeat() {
+      this.$router.push('/add-seat')
+    },
     getSeatColor(status) {
       switch (status) {
         case 'selected':
