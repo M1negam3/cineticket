@@ -1,20 +1,30 @@
-<div class="content-container p-5 d-flex justify-content-center">
-    <div class="card h-100 w-50 table-responsive">
-        <table class="table table-hover table-bordered m-0">
-            <tr>
-                <th>
-                    Kategorien
-                </th>
+<div class="content-container p-5 d-flex flex-column align-center">
+    <div>
+        <h1 class="headlines pb-5">Kategoriedetails</h1>
+    </div>
+    <div class="card h-100 w-50 table-responsive movies-list-container">
+        <div>
+            <table class="table table-hover table-bordered m-0">
+                <tr>
+                    <th>
+                        Kategorien
+                    </th>
                     <td>
                         <%= category.name %>
                     </td>
-                <th>
-                    KategorienId
-                </th>
+                </tr>
+                <tr>
+                    <th>
+                        Kategorie ID
+                    </th>
                     <td>
                         <%= category.id %>
                     </td>
-            </tr>
-        </table>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mt-5 movies-list-container">
+        <a class="btn btn-secondary" href="/category">Zurück</a>
     </div>
 </div>

@@ -63,6 +63,9 @@ module.exports.routes = {
   'GET /movie/:id/edit': 'movie.edit',
   'POST /movie/:id/update': 'movie.update',
   'GET /movie/:id/delete': 'movie.destroy',
+  'GET /movie/:id/uploadImageForm': 'movie.uploadImageForm',
+  'POST /movie/:id/uploadImage': 'movie.uploadImage',
+
   'GET /search': 'MovieController.find',
   
   'GET /category/new': { view: 'pages/category/new' },
@@ -75,10 +78,11 @@ module.exports.routes = {
 
   'GET /movie-overview': { view: 'pages/movie-overview' },
 
+  'GET /api/seat': {action:'api/seat/report'},
+  'POST /api/seat': {action:'api/seat/add'},
+  'PUT /api/seat/update/:id': 'SeatController.updateSeat',
+  
+  'GET /api/search': { action: 'api/category/index'},
 
-  'GET /seat/list': 'SeatController.list',
-  'GET /seat/select/:id': 'SeatController.select',
-
-  'POST /seat/add-seats': 'SeatController.addSeats',
 
 };

@@ -1,14 +1,31 @@
-<div id="movie-overview-container" class="content-container p-3">
-    <h2>Filmauswahl in {{ location }}</h2>
+<div id="app" class="content-container d-flex flex-column align-items-center pt-5 pb-5">
+  <h2 class="pb-3 headlines fs-1">Filmauswahl in {{ location }}</h2>
+  <router-view></router-view>
 </div>
+<script type="module">
+  import Movie from "/vue/movies.js";
+  import moviesentrycomponent from "/vue/moviesentry.js";
 
-<script>
-    const { createApp } = Vue
-    createApp({
-        data() {
-            return {
-                location: 'Konstanz'
-            }
-        }
-    }).mount('#movie-overview-container')
+  const routes = [
+    { path: "/", component: Movie },
+  ];
+
+  const router = VueRouter.createRouter({
+    history: VueRouter.createWebHashHistory(),
+    routes,
+  });
+
+  // 5. Create and mount the root instance.
+  const app = Vue.createApp({
+    data() {
+      return {
+        location: localStorage.getItem("location"),
+      }
+    }
+  });
+  const vuetify = Vuetify.createVuetify();
+  app.component("moviesentry", moviesentrycomponent);
+  app.use(router);
+  app.use(vuetify);
+  app.mount("#app");
 </script>

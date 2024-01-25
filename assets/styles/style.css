@@ -5,6 +5,24 @@ body {
     flex-direction: column;
 }
 
+header {
+    background-color: white;
+}
+
+footer {
+    background-color: white;
+}
+
+.navigation-bar-div a {
+    text-decoration-color: transparent;
+    transition: all 1s;
+}
+
+.navigation-bar-div a:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
 .side-space {
     width: 75%;
 }
@@ -17,7 +35,7 @@ body {
 .home-slideshow-section {
     position: relative;
     width: 100%;
-    height: calc(50vh);
+    height: calc(40vh);
     overflow: hidden;
 }
 
@@ -37,7 +55,7 @@ body {
 .home-text-container {
     animation-name: fadeIn;
     animation-duration: 2s;
-    width: 60%;
+    /* width: 60%; */
     text-align: center;
 }
 
@@ -55,6 +73,7 @@ body {
 .location-selection a {
     margin-bottom: .25rem;
     width: 100%;
+    animation: horizontal-shaking 5s infinite;
 }
 
 .location-selection a:hover {
@@ -63,9 +82,41 @@ body {
 
 .about-us-container {
     width: 60%;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+}
+
+.seat-width {
+    width: 5%;
+}
+
+.headlines {
+    font-weight: 700;
+    font-size: 3.5rem;
+    animation: fadeIn 1.2s, scaleIn 1.2s;
+}
+
+.location-button {
+    background-color: #FFFFFF;
+    transition: all 0.5s;
+}
+
+.location-button:hover {
+    background-color: #0099ff1e;
+    text-decoration: none!important;
+}
+
+.movies-list-container {
+    animation: slideIn 0.8s;
 }
 
 @media (max-width: 768px) {
+    .home-text-container {
+        width: 90%;
+    }
+    .cineticket-headline {
+        font-size: 2.5rem;
+    }
     .location-selection-container {
         flex-direction: column;
     }
@@ -78,7 +129,7 @@ body {
         margin-bottom: .5rem;
     }
     .about-us-container {
-        width: 80%;
+        width: 90%;
     }
     .side-space {
         width: 100%;
@@ -102,4 +153,21 @@ body {
     to {
         opacity: 1;
     }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    2% { transform: translateX(5px) }
+    4% { transform: translateX(-5px) }
+    6% { transform: translateX(5px) }
+    8% { transform: translateX(0) }
 }
