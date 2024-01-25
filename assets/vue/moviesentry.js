@@ -17,10 +17,12 @@ export default {
         return true;
       },
       buyTickets(venueEntry) {
-        // Setze die venueId in der data-Option
         this.$root.selectedVenueId = venueEntry.id;
-        // Navigiere zur Seat-Report Seite und füge die Uhrzeit zum Pfad hinzu
-        this.$router.push({ path: '/seat/report', query: { selectedVenueId: venueEntry.id } });
+        this.navigateToSeatReport();
+      },
+      navigateToSeatReport() {
+        const selectedVenueId = this.$root.selectedVenueId;
+        window.location.href = `/seat#/seat/report?selectedVenueId=${selectedVenueId}`;
       },
       formatDate(date) {
         this.dateOutput = true; 
@@ -51,7 +53,7 @@ export default {
         <template v-if="hasVenue()">
             <div v-for="venueEntry in venue" :key="venueEntry.id">
               <template v-if="venueEntry.movie.id === movie.id">
-              <a href="/seat" class="btn btn-primary" @click="buyTickets(venueEntry)">
+              <a href="#" class="btn btn-primary" @click="buyTickets(venueEntry)">
                   {{ venueEntry.time }}
                   </a>
               </template>
@@ -59,7 +61,8 @@ export default {
           </template>
 
         <a href="/seat" class="btn btn-primary">Buy Tickets</a>
-        <a href="/seat" class="btn btn-primary">Test Button</a>        
+        <a href="/seat" class="btn btn-primary">Test Button</a>
+               
       </div>
     </div>
   </div>

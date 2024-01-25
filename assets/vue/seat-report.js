@@ -9,8 +9,7 @@ export default {
   },
  
   created() {
-    this.loadSeatsByVenue(2);
-    console.log('selectedVenueId anzeigen. New value:', this.$router.selectedVenueId);
+    this.loadSeatsByVenue(this.$route.query.selectedVenueId);
   },
   methods: {
     loadSeatsByVenue(venueId) {
