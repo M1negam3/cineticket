@@ -1,3 +1,18 @@
+.farbe-lapis-lazuli {
+    color: #2F6690;
+}
+.farbe-cerulean {
+    color: #3A7CA5;
+}
+.farbe-platinum{
+    color: #D9DCD6;
+}
+.farbe-indigo-dye{
+    color: #16425B;
+}
+.farbe-sky-blue{
+    color: #81C3D7;
+}
 body {
     background-color: #D9DCD6;
     min-height: 100vh;
