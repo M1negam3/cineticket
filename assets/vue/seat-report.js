@@ -101,20 +101,20 @@ export default {
         <div>
           <h1>Leinwand</h1>
         </div>
-          <div class="item-content row text-center">
-            <div class="col-4 seat-width" v-for="entry in entries" :key="entry.id">
+          <div class="item-content row text-center seat-div-width">
+            <div class="col-4 pb-1 seat-div-p" v-for="entry in entries" :key="entry.id" :style="{ height: '40px', width: '40px' }">
               <button
                 v-if="entry.status !== 'occupied'"
                 type="button"
                 class="seat-button"
-                :style="{ backgroundColor: getSeatColor(entry.status), height: '30px', width: '30px', margin: '0 4px 8px 0' }"
+                :style="{ backgroundColor: getSeatColor(entry.status), height: '100%', width: '100%' }"
                 @click="toggleSeatStatus(entry)"
               ></button>
               <button
                 v-else
                 type="button"
                 class="seat-button-occupied"
-                :style="{ backgroundColor: getSeatColor(entry.status), height: '30px', width: '30px', margin: '0 4px 8px 0' }"
+                :style="{ backgroundColor: getSeatColor(entry.status), height: '100%', width: '100%' }"
                 @click="handleOccupiedSeatClick(entry)"
               ></button>
             </div>

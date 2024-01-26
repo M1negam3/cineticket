@@ -20,7 +20,7 @@ export default {
   template: `
     <div class="d-flex flex-column align-center">
       <div>
-        <h1 class="headlines">Danke für Ihre Bestellung!</h1>
+        <h1 class="headlines text-center">Danke für Ihre Bestellung!</h1>
         <div class="movies-list-container">
           <div class="d-flex flex-column align-center">
             <div class="card mt-5 mb-5 fs-4">
