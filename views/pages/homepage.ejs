@@ -1,7 +1,13 @@
 <div class="d-flex flex-column align-items-center">
     <div class="home-slideshow-section">
         <div class="home-slideshow-image-container">
-            <img class="home-slideshow" src="images/home_ticket.jpg" alt="CineTicket Kinokarten">
+            <img class="home-slideshow" srcset="images/home_ticket_320.jpg 320w,
+            images/home_ticket_640.jpg 640w,
+            images/home_ticket.jpg 1280w"
+            sizes="(max-width: 320px) 320px,
+            (max-width: 640px) 640px,
+            (max-width:1280) 1280px"
+            src="images/home_ticket.jpg" alt="CineTicket Kinokarten">
         </div>
     </div>
     <div class="home-text-container d-flex flex-column align-items-center mt-5">
