@@ -30,7 +30,7 @@ export default {
                 <strong>Gesamt</strong>: {{ formatCurrency(getSelectedSeats() * 10) }}
               </div>
             </div>
-            <a href="/" class="btn btn-primary" @click="deleteBoughtItem">Zurück zur Homepage</a>
+            <a href="/" class="btn btn-lg color-sky-blue" @click="deleteBoughtItem">Zurück zur Homepage</a>
           </div>
         </div>
       </div>

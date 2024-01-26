@@ -60,8 +60,6 @@ export default {
             </div>
           </template>
 
-        <a href="/seat" class="btn btn-primary">Buy Tickets</a>
-        <a href="/seat" class="btn btn-primary">Test Button</a>
                
       </div>
     </div>

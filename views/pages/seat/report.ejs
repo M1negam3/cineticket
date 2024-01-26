@@ -6,12 +6,10 @@
 
   import SeatReport from '/vue/seat-report.js';
   import SeatConfirmation from '/vue/seat-confirmation.js'
-  import AddSeatComponent from '/vue/add-seat.js';
 
   const routes = [
     { path: '/', redirect: '/seat/report' },
     { path: '/seat/report', component: SeatReport },
-    { path: '/add-seat', component: AddSeatComponent },
     { path: '/seat/confirmation', component: SeatConfirmation }
   ];
 
