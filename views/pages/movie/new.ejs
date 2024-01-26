@@ -5,15 +5,15 @@
             <div>
                 <div class="form-group">
                     <label class="col-form-label-lg">Name</label>
-                    <input type="text" class="form-control" maxlength="80" name="name">
+                    <input type="text" class="form-control" maxlength="80" name="name" pattern="[a-zA-Z0-9\s]+" title="Nur Buchstaben und Ziffern erlaubt" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label-lg">Länge</label>
-                    <input type="text" class="form-control" maxlength="8" name="duration">
+                    <input type="text" class="form-control" maxlength="8" name="duration" pattern="[0-9]+" title="Nur Ziffern erlaubt" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label-lg">Beschreibung</label>
-                    <input type="text" maxlength="80" class="form-control" name="description">
+                    <input type="text" maxlength="80" class="form-control" name="description" pattern="[a-zA-Z0-9\s]+" title="Nur Buchstaben und Ziffern erlaubt" required>
                 </div>
             </div>
             <div class="form-group">

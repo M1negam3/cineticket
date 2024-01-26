@@ -92,6 +92,7 @@ module.exports.routes = {
 
   'GET /legal-notice': { view: 'pages/legal-notice' },
   'GET /data-privacy': { view: 'pages/data-privacy' },
+  'GET /contact': { view: 'pages/contact' },
 
 
 

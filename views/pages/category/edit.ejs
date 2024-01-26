@@ -4,7 +4,7 @@
         <form action="/category/<%= category.id %>/update" method="post">
             <div class="form-group">
                 <label class="col-form-label-lg">Name</label>
-                <input type="text" class="form-control" value="<%= category.name %>" maxlength="80" name="name">
+                <input type="text" class="form-control" value="<%= category.name %>" maxlength="80" name="name" pattern="[a-zA-Z0-9\s]+" title="Nur Buchstaben und Ziffern erlaubt" required>
             </div>
             <div class="mt-5">
                 <button type="submit" class="btn btn-success color-white">Speichern</button>

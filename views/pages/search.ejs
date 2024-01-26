@@ -6,7 +6,7 @@
             <div class="mb-3">
                 <div class="form-group">
                     <label class="col-form-label-lg">Titel</label>
-                    <input class="form-control" type="text" value="<%= req.query.q %>" length="20" name="q">
+                    <input class="form-control" type="text" value="<%= req.query.q %>" length="20" name="q" pattern="[a-zA-Z0-9]+" title="Nur Buchstaben und Ziffern erlaubt">
                 </div>
                 <div class="form-group">
                     <label class="col-form-label-lg">Kategorie</label>
