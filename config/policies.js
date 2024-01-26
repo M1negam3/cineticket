@@ -37,7 +37,6 @@ module.exports.policies = {
     '*': 'is-super-admin',
   },
   SeatController: {
-    'addSeat': 'is-super-admin',
     '*': 'is-logged-in',
   }
 };
