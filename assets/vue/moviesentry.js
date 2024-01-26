@@ -41,25 +41,18 @@ export default {
         <p class="card-text">Länge: {{ movie.duration }} Minuten</p>
         <p class="card-text">{{ movie.description }}</p>
 
-        <template v-if="hasVenue()">
-        <div v-for="venueEntry in venue" :key="venueEntry.id">
-          <template v-if="venueEntry.movie.id === movie.id && !dateOutput">
-            <p class="card-text">{{ formatDate(venueEntry.date) }}</p>
-          </template>
-        </div>
-      </template>
-
-
-        <template v-if="hasVenue()">
-            <div class="p-1 d-flex" v-for="venueEntry in venue" :key="venueEntry.id">
-              <template v-if="venueEntry.movie.id === movie.id">
-              <a href="#" class="btn btn-lg color-sky-blue" @click="buyTickets(venueEntry)">
-                  {{ venueEntry.time }}
-                  </a>
+          <template v-if="hasVenue()">
+            <template v-for="venueEntry in venue" :key="venueEntry.id">
+              <template v-if="venueEntry.movie.id === movie.id && !dateOutput">
+                <p class="card-text mt-1 mr-1">{{ formatDate(venueEntry.date) }}</p>
               </template>
-            </div>
+              <template v-if="venueEntry.movie.id === movie.id">
+                <a href="#" class="btn btn-lg color-sky-blue mt-1 mr-1" @click="buyTickets(venueEntry)">
+                  {{ venueEntry.time }}
+                </a>
+              </template>
+            </template>
           </template>
-
                
       </div>
     </div>

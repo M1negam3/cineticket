@@ -109,7 +109,15 @@ footer {
 }
 
 .seat-width {
-    width: 5%;
+    width: 20%;
+}
+
+.seat-div-width {
+    width: 128px;
+}
+
+.seat-div-p {
+    padding: 4px;
 }
 
 .headlines {
