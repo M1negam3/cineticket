@@ -20,8 +20,8 @@ module.exports.policies = {
    //'*': true,
   //'*': 'is-logged-in',
 
-  '*/seat':'is-logged-in',
-  '*/admin':'is-super-admin',
+  //'*/seat':'is-logged-in',
+  //'*/admin':'is-super-admin',
 
   // Bypass the `is-logged-in` policy for:
   'entrance/*': true,

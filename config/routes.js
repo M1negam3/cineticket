@@ -86,7 +86,6 @@ module.exports.routes = {
 
   'GET /api/search/venues': { action: 'api/venue/index'},
 
-  'POST /api/seat': {action:'api/seat/add'},
 
   'GET /api/seat/by-venue': 'SeatController.findByVenue',
 
