@@ -86,10 +86,13 @@ export default {
     handleOccupiedSeatClick(entry) {
       console.log('Klick auf occupied Sitzplatz:', entry);
     },
+    formatCurrency(number) {
+      return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(number);
+    }
   },
   template: `
     <div class="container d-flex flex-column align-items-center">
-    <div class="w-100">
+    <div>
       <h1 class="headlines">Sitzplatzwahl</h1>
     </div>
 
@@ -116,15 +119,15 @@ export default {
               ></button>
             </div>
           </div>
-          <div class="pt-5 pb-5">
-          Tickets: {{ countSelectedSeats() / 10 }} x 10 Euro<br>
-          davon MwSt.: {{ countSelectedSeats() * 0.19 }} Euro<br>
-          Gesamt: {{ countSelectedSeats() }} Euro
+          <div class="card mt-5 mb-5 fs-4">
+            <div class="card-body p-5">
+              <strong>Tickets</strong>: {{ countSelectedSeats() / 10 }} x {{ formatCurrency(10) }}<br>
+              <strong>davon MwSt.</strong>: {{ formatCurrency(countSelectedSeats() * 0.19) }}<br>
+              <strong>Gesamt</strong>: {{ formatCurrency(countSelectedSeats()) }}
+            </div>
           </div>
 
-          <!--<button @click="addSeat">Sitzplatz hinzufügen</button>-->
-          <button type="button" class="btn btn-outline-info chair-button" @click="occupySelectedSeats">
-          <!--<i class="fas fa-chair mr-2"></i> Font Awesome Icon für einen Stuhl -->
+          <button type="button" class="btn color-sky-blue" @click="occupySelectedSeats">
             Kostenpflichtig bestellen
           </button>
 

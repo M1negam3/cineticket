@@ -1,17 +1,24 @@
-.farbe-lapis-lazuli {
-    color: #2F6690;
+.color-lapis-lazuli {
+    background-color: #2F6690;
 }
-.farbe-cerulean {
-    color: #3A7CA5;
+.color-cerulean {
+    background-color: #3A7CA5;
 }
-.farbe-platinum{
-    color: #D9DCD6;
+.color-platinum{
+    background-color: #D9DCD6;
 }
-.farbe-indigo-dye{
-    color: #16425B;
+.color-indigo-dye{
+    background-color: #16425B;
 }
-.farbe-sky-blue{
-    color: #81C3D7;
+.color-sky-blue{
+    background-color: #81C3D7;
+}
+.color-sky-blue:hover{
+    background-color: #2F6690;
+    color: white;
+}
+.color-white {
+    color: white;
 }
 body {
     background-color: #D9DCD6;
@@ -117,7 +124,8 @@ footer {
 }
 
 .location-button:hover {
-    background-color: #0099ff1e;
+    background-color: #2F6690;
+    color: white;
     text-decoration: none!important;
 }
 

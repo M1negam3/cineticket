@@ -90,6 +90,9 @@ module.exports.routes = {
 
   'GET /api/seat/by-venue': 'SeatController.findByVenue',
 
+  'GET /legal-notice': { view: 'pages/legal-notice' },
+  'GET /data-privacy': { view: 'pages/data-privacy' },
+
 
 
 

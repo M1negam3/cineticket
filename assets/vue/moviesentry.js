@@ -51,9 +51,9 @@ export default {
 
 
         <template v-if="hasVenue()">
-            <div v-for="venueEntry in venue" :key="venueEntry.id">
+            <div class="p-1 d-flex" v-for="venueEntry in venue" :key="venueEntry.id">
               <template v-if="venueEntry.movie.id === movie.id">
-              <a href="#" class="btn btn-primary" @click="buyTickets(venueEntry)">
+              <a href="#" class="btn btn-lg color-sky-blue" @click="buyTickets(venueEntry)">
                   {{ venueEntry.time }}
                   </a>
               </template>
