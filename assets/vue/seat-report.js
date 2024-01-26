@@ -4,7 +4,7 @@ export default {
     return {
       entries: [],
       selectedVenueId: null,
-      venueId: 1,
+      venueId: null,
     };
   },
  
@@ -136,14 +136,5 @@ export default {
 
 
 
-    `,
-    style: `
-      .chair-button {
-      /* Hier kannst du zusätzliche Stilisierungen für den Stuhl-Button hinzufügen */
-      }
-
-      /* Optional: Stil für das Font Awesome Icon */
-    .fas.fa-chair {
-    /* Hier kannst du das Icon nach Bedarf anpassen */
-    } `,
+    `
 };
